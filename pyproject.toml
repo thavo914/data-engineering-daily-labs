@@ -18,6 +18,9 @@ dev = [
     "ruff>=0.5.0",
 ]
 
+[tool.setuptools]
+py-modules = []
+
 [tool.ruff]
 line-length = 120
 target-version = "py310"

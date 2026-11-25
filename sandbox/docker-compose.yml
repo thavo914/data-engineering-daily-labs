@@ -1,0 +1,17 @@
+# Local Sandbox for Phase 2–4 Labs (use profiles so your laptop stays fast)
+# Example:
+#   docker compose --profile redis up -d
+#   docker compose --profile monitoring up -d
+
+services:
+  redis:
+    image: redis:7.0-alpine
+    profiles: ["redis", "all"]
+    ports:
+      - "6379:6379"
+
+  prometheus:
+    image: prom/prometheus:v2.52.0
+    profiles: ["monitoring", "all"]
+    ports:
+      - "9090:9090"
